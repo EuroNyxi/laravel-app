@@ -1,21 +1,21 @@
 name: euronyxi-laravel-app
 type: laravel
-docroot: public  # WICHTIG: Muss "public" sein für Laravel!
-php_version: "8.3"  # PHP 8.4 ist noch nicht stabil in DDEV (Stand März 2026)
+docroot: public
+php_version: "8.3"
 webserver_type: nginx-fpm
 xdebug_enabled: false
-no_project_mount: false  # Auf false setzen, sonst wird der Code nicht gemountet!
+no_project_mount: false
 
 database:
   type: mariadb
-  version: "11.2"  # 11.8 gibt es noch nicht in DDEV (Stand März 2026)
+  version: "11.4"
 
-nodejs_version: "20"  # Für Vite/Frontend-Tools
-mailpit_version: "v0.6.1"  # Explizite Version für Stabilität
+nodejs_version: "20"
+mailpit_version: "v0.6.1"
 web_environment:
   - APP_URL=https://euronyxi-laravel-app.ddev.site
 
-# Ports für Vite/Livereload (falls benötigt)
+# Ports for Vite/Livereload
 web_extra_exposed_ports:
   - name: vite
     container_port: 5173
