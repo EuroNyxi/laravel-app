@@ -1,0 +1,33 @@
+.ddev/.dbdata
+.ddev/logs
+.ddev/xdebug.log
+/.idea
+/.vscode
+/storage/*.key
+/env
+
+# Laravel
+/bootstrap/cache/*
+/public/storage
+/public/hot
+
+# Testing
+/phpunit.result.cache
+
+# Composer
+vendor/
+
+# Node
+node_modules/
+
+# Environment
+.env
+.env.backup
+.env.local
+.env.*.local
+
+# Ignore Mac system files
+.DS_Store
+
+# Ignore Windows system files
+Thumbs.db
