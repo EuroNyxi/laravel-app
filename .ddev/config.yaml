@@ -8,10 +8,9 @@ no_project_mount: false
 
 database:
   type: mariadb
-  version: "11.4"
+  version: "11.8"
 
 nodejs_version: "20"
-mailpit_version: "v0.6.1"
 web_environment:
   - APP_URL=https://euronyxi-laravel-app.ddev.site
 
