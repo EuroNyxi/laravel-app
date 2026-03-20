@@ -1,33 +1,24 @@
-.ddev/.dbdata
-.ddev/logs
-.ddev/xdebug.log
-/.idea
-/.vscode
-/storage/*.key
-/env
-
-# Laravel
-/bootstrap/cache/*
-/public/storage
-/public/hot
-
-# Testing
-/phpunit.result.cache
-
-# Composer
-vendor/
-
-# Node
-node_modules/
-
-# Environment
+*.log
+.DS_Store
 .env
 .env.backup
-.env.local
-.env.*.local
-
-# Ignore Mac system files
-.DS_Store
-
-# Ignore Windows system files
+.env.production
+.phpactor.json
+.phpunit.result.cache
+/.fleet
+/.idea
+/.nova
+/.phpunit.cache
+/.vscode
+/.zed
+/auth.json
+/node_modules
+/public/build
+/public/hot
+/public/storage
+/storage/*.key
+/storage/pail
+/vendor
+Homestead.json
+Homestead.yaml
 Thumbs.db

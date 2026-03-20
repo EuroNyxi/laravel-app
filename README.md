@@ -42,7 +42,7 @@ EuroNyxi embodies these principles by:
 ---
 
 ## Getting Started
-This repository contains the **monolithic Laravel backend** for EuroNyxi. For setup instructions, see the [documentation](#) (coming soon).
+For setup instructions, see [SETUP.md](SETUP.md).
 
 ### Key Features
 ✅ **Self-Hosted**: Deploy on any PHP-compatible server (Docker, Forge, or shared hosting).
