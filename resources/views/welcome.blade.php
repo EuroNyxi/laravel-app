@@ -55,7 +55,7 @@
 
                     <div class="text-center font-bold text-xl p-4 bg-gray-100 dark:bg-gray-800 rounded-lg shadow-sm">
                         What is this? Find out more: <br>
-                        <a href="https://github.com/EuroNyxi/laravel-app/blob/main/README.md" class="text-blue-600 dark:text-blue-400 underline break-all font-normal text-sm lg:text-base hover:text-blue-800 transition-colors">https://github.com/EuroNyxi/laravel-app/blob/main/README.md</a>
+                        <a href="https://github.com/EuroNyxi/laravel-app/blob/main/README.md" target="_blank" class="text-blue-600 dark:text-blue-400 underline break-all font-normal text-sm lg:text-base hover:text-blue-800 transition-colors">https://github.com/EuroNyxi/laravel-app/blob/main/README.md</a>
                     </div>
                 </div>
 
