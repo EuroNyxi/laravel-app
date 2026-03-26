@@ -1,0 +1,30 @@
+name: Install Breeze
+
+on:
+  push:
+    branches: [ 2-user-login ]
+
+jobs:
+  install-breeze:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+      - name: Install Composer dependencies
+        run: composer install -n --prefer-dist
+      - name: Install Breeze
+        run: php artisan breeze:install
+      - name: Install NPM dependencies
+        run: npm install
+      - name: Build assets
+        run: npm run build
+      - name: Commit changes
+        run: |
+          git config --global user.name "Lukas Bot"
+          git config --global user.email "lukas-bot@rothaargebirge.com"
+          git add .
+          git commit -m "Install Laravel Breeze"
+          git push
