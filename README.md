@@ -41,6 +41,12 @@ EuroNyxi embodies these principles by:
 
 ---
 
+## 4. Technical Notes
+### Database Schema
+This project uses **UUIDs** (Universally Unique Identifiers) as primary keys for all models instead of auto-incrementing integers. This improves security by avoiding predictable IDs and simplifies distributed data synchronization.
+
+---
+
 ## Getting Started
 For setup instructions, see [SETUP.md](SETUP.md).
 
