@@ -45,6 +45,14 @@ EuroNyxi embodies these principles by:
 ### Database Schema
 This project uses **UUIDs** (Universally Unique Identifiers) as primary keys for all models instead of auto-incrementing integers. This improves security by avoiding predictable IDs and simplifies distributed data synchronization.
 
+### Departments Model
+The `departments` table supports organizational structures with:
+- **UUID-based IDs** for departments and users.
+- **Many-to-Many Relationship**: Users can belong to multiple departments, and departments can have multiple users.
+- **Department Head**: Each department can have a designated head (user UUID).
+- **Pivot Table**: `department_user` links users and departments.
+- **Roles**: Users can have one of the following roles: `admin`, `user`, or `department_head`. Only admins can assign the `department_head` role.
+
 ---
 
 ## Getting Started
