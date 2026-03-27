@@ -45,13 +45,26 @@ EuroNyxi embodies these principles by:
 ### Database Schema
 This project uses **UUIDs** (Universally Unique Identifiers) as primary keys for all models instead of auto-incrementing integers. This improves security by avoiding predictable IDs and simplifies distributed data synchronization.
 
+### User Roles
+Users can have one of the following roles: `admin`, `user`, or `department_head`. Only admins can assign the `department_head` role.
+
 ### Departments Model
 The `departments` table supports organizational structures with:
 - **UUID-based IDs** for departments and users.
 - **Many-to-Many Relationship**: Users can belong to multiple departments, and departments can have multiple users.
 - **Department Head**: Each department can have a designated head (user UUID).
 - **Pivot Table**: `department_user` links users and departments.
-- **Roles**: Users can have one of the following roles: `admin`, `user`, or `department_head`. Only admins can assign the `department_head` role.
+
+### API Keys
+The `api_keys` table stores API keys with the following features:
+- **UUID-based IDs** for keys.
+- **Optional User/Department Assignment:**
+  - A key can be assigned to a **user** (user-specific key).
+  - A key can be assigned to a **department** (department-wide key).
+  - A key can be **global** (no user or department assigned).
+- **Encrypted Storage:** The `key` field is encrypted using Laravel’s `encrypted` casting.
+- **Active/Inactive Status:** Keys can be enabled or disabled via `is_active`.
+- **Admin-Only Management:** Only users with the `admin` role can manage API keys (via policies).
 
 ---
 
