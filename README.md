@@ -66,6 +66,17 @@ The `api_keys` table stores API keys with the following features:
 - **Active/Inactive Status:** Keys can be enabled or disabled via `is_active`.
 - **Admin-Only Management:** Only users with the `admin` role can manage API keys (via policies).
 
+### Agent Configurations
+The `agent_configurations` table stores configurations for agents (e.g., allowed models, settings) with the following features:
+- **UUID-based IDs** for configurations.
+- **Optional User/Department Assignment:**
+  - A configuration can be assigned to a **user** (user-specific agent).
+  - A configuration can be assigned to a **department** (department-wide agent).
+  - A configuration can be **company-wide** (no user or department assigned).
+- **Array-Casted Configuration:** The `configuration` field is stored as a JSON array and can be directly accessed as an array in PHP.
+- **Ownership-Based Management:** Users can only manage configurations they own (via policies).
+- **Department-Wide Access:** Users in a department can manage department-wide agent configurations.
+
 ---
 
 ## Getting Started

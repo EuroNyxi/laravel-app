@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\Models\AgentConfiguration;
 use App\Models\ApiKey;
+use App\Policies\AgentConfigurationPolicy;
 use App\Policies\ApiKeyPolicy;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
@@ -15,6 +17,7 @@ class AuthServiceProvider extends ServiceProvider
      */
     protected $policies = [
         ApiKey::class => ApiKeyPolicy::class,
+        AgentConfiguration::class => AgentConfigurationPolicy::class,
     ];
 
     /**
