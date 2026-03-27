@@ -51,6 +51,7 @@ The `departments` table supports organizational structures with:
 - **Many-to-Many Relationship**: Users can belong to multiple departments, and departments can have multiple users.
 - **Department Head**: Each department can have a designated head (user UUID).
 - **Pivot Table**: `department_user` links users and departments.
+- **Roles**: Users can have one of the following roles: `admin`, `user`, or `department_head`. Only admins can assign the `department_head` role.
 
 ---
 
