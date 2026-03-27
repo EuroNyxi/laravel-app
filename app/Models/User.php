@@ -28,6 +28,17 @@ class User extends Authenticatable
         'role',
     ];
 
+
+    /**
+     * The attributes that should be hidden for serialization.
+     *
+     * @var list<string>
+     */
+    protected $hidden = [
+        'password',
+        'remember_token',
+    ];
+
     /**
      * The attributes that should be cast.
      *
