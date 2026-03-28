@@ -15,6 +15,7 @@ class AgentConfiguration extends Model
         'user_id',
         'department_id',
         'configuration',
+        'name',
     ];
 
     protected $casts = [
@@ -29,6 +30,13 @@ class AgentConfiguration extends Model
     public function department(): BelongsTo
     {
         return $this->belongsTo(Department::class);
+    }
+
+    public function aiModels()
+    {
+        return $this->belongsToMany(AIModel::class, 'agentconfiguration_ai_model', 'agentconfiguration_id', 'ai_model_id')
+                    ->withPivot('is_default', 'custom_config')
+                    ->withTimestamps();
     }
 
     public function isGlobal(): bool
