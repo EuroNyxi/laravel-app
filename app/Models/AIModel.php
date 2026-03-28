@@ -29,9 +29,9 @@ class AIModel extends Model
         'is_active' => 'boolean'
     ];
 
-    public function agents()
+    public function agentConfigurations()
     {
-        return $this->belongsToMany(Agent::class, 'agent_ai_model', 'ai_model_id', 'agent_id')
+        return $this->belongsToMany(AgentConfiguration::class, 'agentconfiguration_ai_model', 'ai_model_id', 'agentconfiguration_id')
                     ->withPivot('is_default', 'custom_config')
                     ->withTimestamps();
     }
