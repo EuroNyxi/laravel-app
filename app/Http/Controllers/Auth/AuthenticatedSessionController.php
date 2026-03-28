@@ -28,6 +28,14 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
+        $user = Auth::user();
+        $hasApiKey = \App\Models\ApiKey::where('user_id', $user->id)->exists();
+        $hasAgentConfig = \App\Models\AgentConfiguration::where('user_id', $user->id)->exists();
+
+        if (!$hasApiKey || !$hasAgentConfig) {
+            return redirect()->route('onboarding.index');
+        }
+
         return redirect()->intended(route('dashboard', absolute: false));
     }
 
